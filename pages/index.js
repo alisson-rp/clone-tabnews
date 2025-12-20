@@ -1,4 +1,3 @@
-import img from '../image/logo-teens.png';
 function Home() {
   return (
     <div style={styles.container}>
