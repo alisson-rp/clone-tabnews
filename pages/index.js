@@ -1,85 +1,95 @@
 function Home() {
-    return (
-        <div style={styles.container}>
-            <div style={styles.card}>
-                <h1 style={styles.title}>Atitude Teens</h1>
-                <p style={styles.subtitle}>
-                    Um grupo de adolescentes cristãos vivendo a fé com atitude
-                </p>
+  return (
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <img
+          src="image/logo-teens.png"
+          alt="Atitude Teens"
+          style={styles.logo}
+        />
 
-                <div style={styles.divider}></div>
+        <h1 style={styles.title}>Atitude Teens</h1>
 
-                <h2 style={styles.construction}>🚧 Site em Construção 🚧</h2>
+        <p style={styles.subtitle}>
+          Adolescentes cristãos vivendo a fé com atitude
+        </p>
 
-                <p style={styles.text}>
-                    Estamos preparando algo especial para você!
-                    Em breve, nosso site estará no ar com novidades, eventos e conteúdos
-                    feitos especialmente para adolescentes.
-                </p>
+        <div style={styles.divider}></div>
 
-                <p style={styles.footer}>
-                    “Tudo posso naquele que me fortalece.” – Filipenses 4:13
-                </p>
-            </div>
-        </div>
-    );
+        <h2 style={styles.construction}>🚧 Site em Construção 🚧</h2>
+
+        <p style={styles.text}>
+          Estamos preparando algo especial para você.  
+          Em breve, nosso site estará no ar com conteúdos, eventos e muita atitude!
+        </p>
+
+        <p style={styles.verse}>
+          “Tudo posso naquele que me fortalece.”  
+          <br /> Filipenses 4:13
+        </p>
+      </div>
+    </div>
+  );
 }
 
 const styles = {
-    container: {
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #6a11cb, #2575fc)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "Arial, sans-serif",
-        padding: "20px",
-    },
-    card: {
-        backgroundColor: "#ffffff",
-        borderRadius: "12px",
-        padding: "30px",
-        maxWidth: "500px",
-        textAlign: "center",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
-    },
-    title: {
-        fontSize: "2.5rem",
-        color: "#2575fc",
-        marginBottom: "10px",
-    },
-    subtitle: {
-        fontSize: "1.1rem",
-        color: "#555",
-    },
-    divider: {
-        width: "60px",
-        height: "4px",
-        backgroundColor: "#2575fc",
-        margin: "20px auto",
-        borderRadius: "2px",
-    },
-    construction: {
-        fontSize: "1.8rem",
-        color: "#333",
-        marginBottom: "15px",
-    },
-    text: {
-        fontSize: "1rem",
-        color: "#666",
-        lineHeight: "1.5",
-    },
-    footer: {
-        marginTop: "20px",
-        fontSize: "0.9rem",
-        color: "#888",
-        fontStyle: "italic",
-    },
+  container: {
+    minHeight: "100vh",
+    backgroundColor: "#0b0b0b",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "Arial, sans-serif",
+    padding: "20px",
+  },
+  card: {
+    backgroundColor: "#111",
+    borderRadius: "16px",
+    padding: "40px 30px",
+    maxWidth: "500px",
+    width: "100%",
+    textAlign: "center",
+    boxShadow: "0 0 30px rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.08)",
+  },
+  logo: {
+    width: "120px",
+    marginBottom: "20px",
+    filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))",
+  },
+  title: {
+    fontSize: "2.3rem",
+    color: "#ffffff",
+    marginBottom: "8px",
+    letterSpacing: "1px",
+  },
+  subtitle: {
+    fontSize: "1rem",
+    color: "#bbbbbb",
+  },
+  divider: {
+    width: "60px",
+    height: "3px",
+    backgroundColor: "#ffffff",
+    margin: "22px auto",
+    opacity: 0.6,
+  },
+  construction: {
+    fontSize: "1.6rem",
+    color: "#ffffff",
+    marginBottom: "15px",
+  },
+  text: {
+    fontSize: "1rem",
+    color: "#cccccc",
+    lineHeight: "1.6",
+  },
+  verse: {
+    marginTop: "25px",
+    fontSize: "0.9rem",
+    color: "#888",
+    fontStyle: "italic",
+  },
 };
 
 export default Home;
-// function Home() {
-//   return <h1>Site em Construção</h1>;
-// }
-
-// export default Home;
