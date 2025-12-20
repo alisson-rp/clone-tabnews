@@ -1,5 +1,5 @@
+import img from '../image/logo-teens.png';
 function Home() {
-    const img = require('../image/logo-teens.png')
   return (
     <div style={styles.container}>
       <div style={styles.card}>
