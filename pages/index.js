@@ -3,7 +3,7 @@ function Home() {
     <div style={styles.container}>
       <div style={styles.card}>
         <img
-          src="../image/logo-teens.png"
+          src="image/logo-teens.png"
           alt="Atitude Teens"
           style={styles.logo}
         />
