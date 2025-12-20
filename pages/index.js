@@ -1,5 +1,5 @@
 function Home() {
-  return window.location.href = "em_construcao.html";
+  return <h1>Site em Construção</h1>;
 }
 
 export default Home;
