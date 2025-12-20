@@ -1,10 +1,10 @@
-import logo from "../image/logo-teens.png";
 function Home() {
+    const img = require('../image/logo-teens.png')
   return (
     <div style={styles.container}>
       <div style={styles.card}>
         <img
-          src={logo}
+          src={img}
           alt="Atitude Teens"
           style={styles.logo}
         />
