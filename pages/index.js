@@ -1,9 +1,10 @@
+import logo from "../image/logo-teens.png";
 function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
         <img
-          src="image/logo-teens.png"
+          src={logo}
           alt="Atitude Teens"
           style={styles.logo}
         />
