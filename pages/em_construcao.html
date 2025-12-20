@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atitude Teens - Grupo de adolescentes cristãos vivendo a fé com atitude, união e propósito">
+    <title>Atitude Teens - Em Construção</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container principal -->
+    <main class="container">
+        
+        <!-- Seção de cabeçalho com título -->
+        <header class="header">
+            <div class="logo-container">
+                <!-- Ícones decorativos -->
+                <div class="icon-group">
+                    <i class="fas fa-cross icon-cross"></i>
+                    <i class="fas fa-heart icon-heart"></i>
+                    <i class="fas fa-book-bible icon-bible"></i>
+                </div>
+            </div>
+            
+            <h1 class="main-title">Atitude Teens</h1>
+            <p class="subtitle">"Não deixe ninguém o despreze pelo fato de você ser jovem, mas seja um exemplo para os fiéis"</p>
+            <p class="verse-reference">— 1 Timóteo 4:12</p>
+        </header>
+
+        <!-- Badge de "Em Construção" -->
+        <!--<div class="construction-badge">
+            <i class="fas fa-hammer"></i>
+            <span>Site em Construção</span>
+            <i class="fas fa-hammer"></i>
+        </div>-->
+
+        <!-- Seção de "Site em Construção" ampliada -->
+        <section class="content">
+            <div class="construction-main">
+                <div class="construction-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                
+                <h1 class="construction-title">Site em Construção</h1>
+                
+                <p class="construction-subtitle">
+                    Estamos preparando algo incrível para você!
+                </p>
+                
+                <div class="construction-details">
+                    <p>Em breve, um novo espaço cheio de fé, atitude e propósito.</p>
+                    <p>Acompanhe nossas redes sociais para ficar por dentro das novidades!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p class="footer-text">Em breve, mais novidades! 🙏✨</p>
+            <p class="copyright">&copy; 2024 Atitude Teens - Todos os direitos reservados</p>
+        </footer>
+
+        <!-- Elementos decorativos de fundo -->
+        <div class="bg-decoration bg-decoration-1"></div>
+        <div class="bg-decoration bg-decoration-2"></div>
+        <div class="bg-decoration bg-decoration-3"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            // ============================================
+            // EFEITO DE PARALLAX NOS ÍCONES DO CABEÇALHO
+            // ============================================
+            const iconGroup = document.querySelector('.icon-group');
+            
+            if (iconGroup) {
+                document.addEventListener('mousemove', function(e) {
+                    const mouseX = e.clientX / window.innerWidth;
+                    const mouseY = e.clientY / window.innerHeight;
+                    
+                    // Move os ícones sutilmente com base na posição do mouse
+                    const moveX = (mouseX - 0.5) * 20;
+                    const moveY = (mouseY - 0.5) * 20;
+                    
+                    iconGroup.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            }
+            
+            // ============================================
+            // ANIMAÇÃO DE CONTAGEM DE LOADING (OPCIONAL)
+            // ============================================
+            const constructionBadge = document.querySelector('.construction-badge span');
+            
+            // Adiciona efeito de brilho ao passar o mouse
+            if (constructionBadge) {
+                constructionBadge.parentElement.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                constructionBadge.parentElement.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            }
+            
+            // ============================================
+            // EFEITO DE REVEAL AO SCROLL
+            // ============================================
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observa elementos que devem aparecer ao rolar
+            const revealElements = document.querySelectorAll('.value-item');
+            revealElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // ============================================
+            // ADICIONA EFEITO DE RIPPLE AOS BOTÕES
+            // ============================================
+            function createRipple(event) {
+                const button = event.currentTarget;
+                const circle = document.createElement('span');
+                const diameter = Math.max(button.clientWidth, button.clientHeight);
+                const radius = diameter / 2;
+                
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+                circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+                circle.classList.add('ripple');
+                
+                const ripple = button.getElementsByClassName('ripple')[0];
+                if (ripple) {
+                    ripple.remove();
+                }
+                
+                button.appendChild(circle);
+            }
+            
+            // Adiciona estilo do ripple dinamicamente
+            const style = document.createElement('style');
+            style.textContent = `
+                .ripple {
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple-animation 0.6s linear;
+                    pointer-events: none;
+                }
+                
+                @keyframes ripple-animation {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // ============================================
+            // MENSAGEM DE BOAS-VINDAS NO CONSOLE
+            // ============================================
+            console.log('%c🙏 Atitude Teens ', 'font-size: 20px; font-weight: bold; color: #6B5FED;');
+            console.log('%cSeja bem-vindo(a)! Em breve, teremos novidades incríveis! ✨', 'font-size: 14px; color: #FF8C94;');
+            
+            // ============================================
+            // EFEITO DE DIGITAÇÃO NO SUBTÍTULO (OPCIONAL)
+            // ============================================
+            const subtitle = document.querySelector('.subtitle');
+            if (subtitle && window.innerWidth > 768) {
+                const originalText = subtitle.textContent;
+                subtitle.textContent = '';
+                subtitle.style.opacity = '1';
+                
+                let index = 0;
+                function typeWriter() {
+                    if (index < originalText.length) {
+                        subtitle.textContent += originalText.charAt(index);
+                        index++;
+                        setTimeout(typeWriter, 50);
+                    }
+                }
+                
+                // Inicia a animação após 1 segundo
+                setTimeout(typeWriter, 1000);
+            }
+            
+            // ============================================
+            // ADICIONA CLASSE QUANDO A PÁGINA É ROLADA
+            // ============================================
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 100) {
+                    document.body.classList.add('scrolled');
+                } else {
+                    document.body.classList.remove('scrolled');
+                }
+                
+                lastScroll = currentScroll;
+            });
+            
+            // ============================================
+            // EFEITO DE PARTÍCULAS DE FÉ (OPCIONAL)
+            // ============================================
+            function createFloatingEmoji() {
+                const emojis = ['✨', '🙏', '💫', '⭐', '💛'];
+                const emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.position = 'fixed';
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.bottom = '-50px';
+                emoji.style.fontSize = '2rem';
+                emoji.style.opacity = '0.6';
+                emoji.style.pointerEvents = 'none';
+                emoji.style.zIndex = '0';
+                emoji.style.transition = 'all 4s linear';
+                
+                document.body.appendChild(emoji);
+                
+                setTimeout(() => {
+                    emoji.style.bottom = '110vh';
+                    emoji.style.opacity = '0';
+                }, 100);
+                
+                setTimeout(() => {
+                    emoji.remove();
+                }, 4100);
+            }
+            
+            // Cria emojis flutuantes a cada 5 segundos
+            setInterval(createFloatingEmoji, 5000);
+            
+            console.log('%c✅ Script carregado com sucesso!', 'color: #7CD1B8; font-weight: bold;');
+        });
+    </script>
+</body>
+</html>

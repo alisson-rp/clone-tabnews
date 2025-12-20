@@ -1,5 +1,5 @@
 function Home() {
-  return <h1>Mateus é o meu menino, Gordinho! Papai te ama!</h1>;
+  return window.location.href = "em_construcao.html";
 }
 
 export default Home;
