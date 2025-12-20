@@ -3,11 +3,6 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <img
-          src={img}
-          alt="Atitude Teens"
-          style={styles.logo}
-        />
 
         <h1 style={styles.title}>Atitude Teens</h1>
 
