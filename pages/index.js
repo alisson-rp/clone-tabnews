@@ -2,7 +2,6 @@ function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-
         <h1 style={styles.title}>Atitude Teens</h1>
 
         <p style={styles.subtitle}>
@@ -14,12 +13,12 @@ function Home() {
         <h2 style={styles.construction}>🚧 Site em Construção 🚧</h2>
 
         <p style={styles.text}>
-          Estamos preparando algo especial para você.  
-          Em breve, nosso site estará no ar com conteúdos, eventos e muita atitude!
+          Estamos preparando algo especial para você. Em breve, nosso site
+          estará no ar com conteúdos, eventos e muita atitude!
         </p>
 
         <p style={styles.verse}>
-          “Tudo posso naquele que me fortalece.”  
+          “Tudo posso naquele que me fortalece.”
           <br /> Filipenses 4:13
         </p>
       </div>
